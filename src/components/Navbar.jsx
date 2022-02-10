@@ -207,7 +207,7 @@ const Navbar = () => {
                 <IconButton
                   onClick={authWithGoogle}
                   size="small"
-                  color="inherit"
+                  color="primary"
                 >
                   Войти
                 </IconButton>

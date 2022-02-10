@@ -46,7 +46,7 @@ const Detail = () => {
           <div className="detail-right">
             <ul>
               <li>
-                Бренд: <strong>{detail.breed}</strong>
+                Бренд: <strong>{detail.brand}</strong>
               </li>
               <li>
                 Цена: <strong>{detail.price}</strong>

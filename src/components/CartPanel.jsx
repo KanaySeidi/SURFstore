@@ -8,9 +8,11 @@ import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import { ClientContext } from "../contexts/ClientProvider";
 import { Button, TableFooter } from "@mui/material";
+import { Link } from "react-router-dom";
 
 export default function CartPanel() {
-  const { getCart, cart, changeCount } = React.useContext(ClientContext);
+  const { getCart, cart, changeCount, deleteProductFromCart } =
+    React.useContext(ClientContext);
   React.useEffect(() => {
     getCart();
   }, []);
@@ -29,6 +31,7 @@ export default function CartPanel() {
               <TableCell align="right">Фото</TableCell>
               <TableCell align="right">Цена</TableCell>
               <TableCell align="right">Количество</TableCell>
+              <TableCell>#</TableCell>
               <TableCell align="right">Сумма</TableCell>
             </TableRow>
           </TableHead>
@@ -66,6 +69,14 @@ export default function CartPanel() {
                     />
                   }
                 </TableCell>
+                <TableCell align="right">
+                  <Button
+                    variant="contained"
+                    onClick={() => deleteProductFromCart(item.id)}
+                  >
+                    Удалить
+                  </Button>
+                </TableCell>
                 <TableCell align="right">{item.subPrice} сом</TableCell>
               </TableRow>
             ))}
@@ -83,7 +94,11 @@ export default function CartPanel() {
         </Table>
       </TableContainer>
       <div className="order-btn">
-        <Button variant="contained"> Оформить в заказ</Button>
+        <Link to="/checkout">
+          <Button variant="contained" color="primary">
+            Оформить в заказ
+          </Button>
+        </Link>
       </div>
     </>
   );

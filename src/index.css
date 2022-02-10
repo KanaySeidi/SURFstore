@@ -41,6 +41,7 @@ img {
 .admin-container {
   padding-top: 20px;
   padding-left: 50px;
+  padding-bottom: 20px;
 }
 
 .shop-container {
@@ -49,7 +50,7 @@ img {
 }
 
 video {
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   top: 0;
@@ -122,4 +123,263 @@ video {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+}
+
+.admin-img {
+  height: 90px;
+  width: 97%;
+}
+
+.where-surf {
+  font-size: 29px;
+  font-family: Caveat;
+}
+
+.map-img {
+  width: auto;
+  height: auto;
+  padding-left: 30px;
+}
+.where-container {
+  padding-top: 20px;
+}
+
+.descr {
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+
+.card-country {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+}
+
+.card {
+  width: 250px;
+  height: 250px;
+  border-width: 0px;
+  border-color: unset;
+  border-style: solid;
+  padding-top: 250px;
+  text-align: center;
+  margin: 40px auto;
+
+  border-radius: 10px;
+  font-family: Caveat;
+  font-size: 35px;
+  color: black;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  transition: ease;
+  color: red;
+}
+
+.card:first-child {
+  background: url(https://gosurf.ru/upload/resize_cache/iblock/78e/485_300_2/78e562111a521de8dbade59e11469e10.jpg);
+  object-fit: contain;
+}
+
+.card:nth-child(2) {
+  background: url(https://gosurf.ru/upload/iblock/e31/e31119a0e82bfbc2efec729c7465b484.jpg);
+}
+
+.card:nth-child(3) {
+  background: url(https://gosurf.ru/upload/resize_cache/iblock/cd9/485_300_2/cd90427c87803a89fe39f91a6d1780d8.jpg);
+}
+
+.card:nth-child(4) {
+  background: url(https://gosurf.ru/upload/resize_cache/iblock/37d/485_300_2/37d0b11b560387c8a7528d13cff82914.jpg);
+}
+.card:nth-child(5) {
+  background: url(https://gosurf.ru/upload/resize_cache/iblock/bf3/485_300_2/bf3dd7ecb1a60e189b9805426762789a.jpg);
+}
+.card:nth-child(6) {
+  background: url(https://gosurf.ru/upload/iblock/f72/f7294504e4b3ce719f6608f51e6bc891.jpg);
+}
+.card:nth-child(7) {
+  background: url(https://gosurf.ru/upload/resize_cache/iblock/495/485_300_2/49589186c1c3afd07fc255efbe16f109.jpg);
+}
+.card:nth-child(8) {
+  background: url(https://gosurf.ru/upload/resize_cache/iblock/f56/485_300_2/f563fe7375577360573f09e1e4e6dfe1.jpg);
+}
+.card:nth-child(9) {
+  background: url(https://gosurf.ru/upload/resize_cache/iblock/19f/485_300_2/19fa6bbf98fffa09a06b2a6251c0f404.JPG);
+}
+.card:nth-child(10) {
+  background: url(https://gosurf.ru/upload/resize_cache/iblock/19f/485_300_2/19fa6bbf98fffa09a06b2a6251c0f404.JPG);
+}
+.card:nth-child(11) {
+  background: url(https://gosurf.ru/upload/resize_cache/iblock/790/485_300_2/79095b6ee2eceff5c3bc25b7e04efc3f.jpg);
+}
+.card:last-child {
+  background: url(http://sport.kg/uploads/posts/2016-07/1469678648_ikonka.jpg);
+}
+
+.surf-words {
+  font-family: Caveat;
+  font-weight: bold;
+  font-size: 30px;
+
+  line-height: 40px;
+  cursor: pointer;
+}
+
+.word-list:hover {
+  transform: scale(1.1);
+  color: red;
+  font-size: 25px;
+}
+
+.first-sentense {
+  font-family: Caveat;
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.surf-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+
+  margin: 40px auto;
+}
+
+.surf-season {
+  border-style: solid;
+  border-style: none;
+  height: 250px;
+  width: 350px;
+  margin: 40px auto;
+  padding-top: 255px;
+  font-family: Caveat;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.surf-season:hover {
+  transform: scale(1.1);
+  transition: 0.6s;
+  color: red;
+}
+
+.surf-season:first-child {
+  background: url(https://gosurf.ru/upload/resize_cache/iblock/844/485_300_2/844d672112eb2b15bd9a614bfbbad716.jpg);
+}
+.surf-season:nth-child(2) {
+  background: url(https://gosurf.ru/upload/resize_cache/iblock/c00/485_300_2/c001a0b591c91478df90bca6de84e493.jpg);
+}
+.surf-season:nth-child(3) {
+  background: url(https://gosurf.ru/upload/resize_cache/iblock/045/485_300_2/0456b7fa5b57d436784b61a82e107da2.JPG);
+}
+.surf-season:last-child {
+  background: url(https://gosurf.ru/upload/resize_cache/iblock/f6f/485_300_2/f6fbc2f2b12283a10b1dfcf94145e395.JPG);
+}
+
+.surf-shop {
+  padding-top: 40px;
+  padding-bottom: 20px;
+  padding-left: 350px;
+  font-size: 46px;
+}
+
+.begin-word {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.main-word {
+  font-family: Caveat;
+  font-weight: bold;
+  font-size: 28px;
+}
+
+.winter-img img {
+  height: 450px;
+  width: 100%;
+  object-fit: contain;
+}
+
+.back {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+
+.filters-block {
+  display: flex;
+  margin-bottom: 35px;
+  align-items: center;
+}
+
+.filters-block div {
+  margin-right: 5px;
+}
+
+.filters-block > div:nth-child(2) {
+  width: 150px;
+}
+
+.filters-block > div:nth-child(3) {
+  width: 330px;
+  margin-right: 20px;
+  margin-left: 10px;
+}
+
+.products-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.footer-container {
+  display: grid;
+  padding-top: 50px;
+  padding-bottom: 0;
+  /* position: fixed; */
+  left: 0px;
+  bottom: 0px;
+  height: 30px;
+  width: 100%;
+}
+
+.footer-background {
+  height: 150px;
+  width: 100%;
+  background-color: black;
+  opacity: 0.7;
+  position: relative;
+}
+
+.footer-list {
+  position: absolute;
+  font-size: 18px;
+  display: grid;
+  grid-template-columns: 1fr;
+  color: white;
+  line-height: 35px;
+  padding-left: 250px;
+  padding-top: 20px;
+}
+
+.checkoutPage-fields {
+  display: flex;
+  flex-direction: column;
+}
+.order-btn {
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+}
+.thx {
+  font-family: Caveat;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.welcome-page {
+  padding-top: 50px;
+  padding-bottom: 150px;
 }

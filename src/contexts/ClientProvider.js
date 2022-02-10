@@ -46,9 +46,7 @@ const ClientProvider = (props) => {
     }
   };
 
-  // ! PAGINATION
-
-  const productsPerPage = 3;
+  const productsPerPage = 6;
   const [currentPage, setCurrentPage] = useState(1);
   const [posts, setPosts] = useState([]);
 
