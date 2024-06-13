@@ -227,12 +227,6 @@ video {
   cursor: pointer;
 }
 
-.word-list:hover {
-  transform: scale(1.1);
-  color: red;
-  font-size: 25px;
-}
-
 .first-sentense {
   font-family: Caveat;
   font-weight: bold;
@@ -337,7 +331,7 @@ video {
   display: grid;
   padding-top: 50px;
   padding-bottom: 0;
-  /* position: fixed; */
+  /* position: absolute; */
   left: 0px;
   bottom: 0px;
   height: 30px;

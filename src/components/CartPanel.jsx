@@ -13,13 +13,23 @@ import { Link } from "react-router-dom";
 export default function CartPanel() {
   const { getCart, cart, changeCount, deleteProductFromCart } =
     React.useContext(ClientContext);
+
+  const [shouldUpdate, setShouldUpdate] = React.useState(true);
   React.useEffect(() => {
-    getCart();
-  }, []);
+    if (shouldUpdate) {
+      getCart();
+      setShouldUpdate(false);
+    }
+  }, [shouldUpdate]);
 
   if (!cart) {
     return <h2>Loading ...</h2>;
   }
+
+  const handleDelete = (productId) => {
+    deleteProductFromCart(productId);
+    setShouldUpdate(true); // Устанавливаем флаг для обновления корзины
+  };
 
   return (
     <>
@@ -63,6 +73,7 @@ export default function CartPanel() {
                           return;
                         }
                         changeCount(e.target.value, item.product.id);
+                        setShouldUpdate(true);
                       }}
                       type="number"
                       value={item.count}
@@ -72,7 +83,7 @@ export default function CartPanel() {
                 <TableCell align="right">
                   <Button
                     variant="contained"
-                    onClick={() => deleteProductFromCart(item.id)}
+                    onClick={() => handleDelete(item.product.id)}
                   >
                     Удалить
                   </Button>
@@ -81,25 +92,45 @@ export default function CartPanel() {
               </TableRow>
             ))}
           </TableBody>
-          <TableFooter>
-            <TableRow>
-              <TableCell colSpan={4} align="right">
-                <strong style={{ fontSize: 22 }}>Итоговая сумма:</strong>
-              </TableCell>
-              <TableCell colSpan={1} align="right">
-                <strong style={{ fontSize: 20 }}>{cart.totalPrice} COM</strong>
-              </TableCell>
-            </TableRow>
-          </TableFooter>
+          {cart.products.length > 0 ? (
+            <TableFooter>
+              <TableRow>
+                <TableCell colSpan={4} align="right">
+                  <strong style={{ fontSize: 22 }}>Итоговая сумма:</strong>
+                </TableCell>
+                <TableCell colSpan={1} align="right">
+                  <strong style={{ fontSize: 20 }}>
+                    {cart.totalPrice} COM
+                  </strong>
+                </TableCell>
+              </TableRow>
+            </TableFooter>
+          ) : (
+            <TableFooter>
+              <TableRow>
+                <TableCell colSpan={10} align="left">
+                  <strong style={{ fontSize: 22 }}>Корзина пуста</strong>
+                </TableCell>
+              </TableRow>
+            </TableFooter>
+          )}
         </Table>
       </TableContainer>
-      <div className="order-btn">
-        <Link to="/checkout">
-          <Button variant="contained" color="primary">
+      {cart.products.length > 0 ? (
+        <div className="order-btn">
+          <Link to="/checkout">
+            <Button variant="contained" color="primary">
+              Оформить в заказ
+            </Button>
+          </Link>
+        </div>
+      ) : (
+        <div className="order-btn">
+          <Button disabled variant="contained" color="primary">
             Оформить в заказ
           </Button>
-        </Link>
-      </div>
+        </div>
+      )}
     </>
   );
 }

@@ -46,7 +46,6 @@ const MyRoutes = () => {
               <Route path="/when/outumn" element={<Outumn />} />
               <Route path="/when/spring" element={<Spring />} />
             </Routes>
-            <Footer />
           </BrowserRouter>
         </AdminProvider>
       </ClientProvider>
